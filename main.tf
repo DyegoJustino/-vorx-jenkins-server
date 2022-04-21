@@ -18,7 +18,7 @@ module "jenkins_sg" {
   name        = "Jenkins-SG"
   description = "Security group para nossa instancia do Jenkins Server"
   vpc_id      = data.aws_vpc.vorx_vpc.id
-  ingress_cidr_blocks = ["0.0.0.0"]
+  ingress_cidr_blocks = ["0.0.0.0/0"]
   ingress_rules       = ["http-80-tcp", "ssh-tcp", "http-8080-tcp"]
   egress_rules        = ["all-all"]
 }
